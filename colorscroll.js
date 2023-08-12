@@ -1,10 +1,12 @@
 /**
- * Lumos ColorScroll 1.0.0
+ * Lumos ColorScroll 1.0.1
  * Copyright 2023 Timothy Ricks
  * Released under the MIT License
  * Released on: August 12, 2023
  */
-
+let sectionModes = {};
+let sectionModeTotal;
+let cardModeTotal;
 window.addEventListener("DOMContentLoaded", (event) => {
   // attribute value checker
   function attr(defaultVal, attrVal) {
@@ -18,9 +20,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
   // variables
   const targetStylesheet = document.querySelector("#lumos-colors");
-  let sectionModes = {};
-  let sectionModeTotal;
-  let cardModeTotal;
   if (targetStylesheet) {
     // get colors
     const rules = targetStylesheet.sheet.cssRules || targetStylesheet.sheet.rules;
