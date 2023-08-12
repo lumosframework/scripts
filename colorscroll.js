@@ -85,10 +85,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
       }
     }
 
-    let durationSetting = attr(0.4, $("body").attr("colorscroll-speed")),
-      easeSetting = attr("power1.out", $("body").attr("colorscroll-ease")),
-      offsetSetting = attr(50, $("body").attr("colorscroll-offset")),
-      breakpointSetting = attr(0, $("body").attr("colorscroll-breakpoint"));
+    let durationSetting = attr(0.4, $("#lumos-colors").attr("colorscroll-speed")),
+      easeSetting = attr("power1.out", $("#lumos-colors").attr("colorscroll-ease")),
+      offsetSetting = attr(50, $("#lumos-colors").attr("colorscroll-offset")),
+      breakpointSetting = attr(0, $("#lumos-colors").attr("colorscroll-breakpoint"));
     // scrolltrigger code
     gsap.registerPlugin(ScrollTrigger);
     $("[colorscroll-mode]").each(function () {
