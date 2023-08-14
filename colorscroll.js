@@ -1,5 +1,5 @@
 /**
- * Lumos ColorScroll 1.0.1
+ * Lumos ColorScroll 1.0.2
  * Copyright 2023 Timothy Ricks
  * Released under the MIT License
  * Released on: August 12, 2023
@@ -94,6 +94,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     $("[colorscroll-mode]").each(function () {
       let modeIndex = +$(this).attr("colorscroll-mode");
       let modeCurrent = sectionModes[`sectionMode${modeIndex}`];
+
       if (modeCurrent !== undefined) {
         ScrollTrigger.create({
           trigger: $(this),
@@ -104,7 +105,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
               gsap.matchMedia().add(`(min-width: ${breakpointSetting}px)`, () => {
                 gsap.to("body", { ...sectionModes[`sectionMode${modeIndex}`]["mode"], duration: durationSetting, ease: easeSetting });
                 for (let i = 1; i <= cardModeTotal; i++) {
-                  gsap.to(`[card-mode="${i}"], [class*="cm0-${i}"]`, { ...sectionModes[`sectionMode${modeIndex}`][`cardMode${i}`], duration: durationSetting, ease: easeSetting });
+                  let cards = $(`[card-mode="${i}"], [class*="cm0-${i}"]`);
+                  cards.each(function (index) {
+                    if ($(this).closest("[section-mode]:not(body), [class*='sm0']:not(body)").length) {
+                      cards = cards.not($(this));
+                    }
+                  });
+                  gsap.to(cards, { ...sectionModes[`sectionMode${modeIndex}`][`cardMode${i}`], duration: durationSetting, ease: easeSetting });
                 }
               });
             }
