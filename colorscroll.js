@@ -1,5 +1,5 @@
 /**
- * Lumos ColorScroll 1.0.2
+ * Lumos ColorScroll 1.0.3
  * Copyright 2023 Timothy Ricks
  * Released under the MIT License
  * Released on: August 12, 2023
