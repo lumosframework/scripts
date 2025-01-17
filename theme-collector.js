@@ -1,5 +1,5 @@
 /**
- * Theme Collector 1.0.6
+ * Theme Collector 1.0.7
  * Released under the MIT License
  * Released on: January 17, 2025
  */
@@ -68,9 +68,9 @@ function getColorThemes() {
         window.colorThemes.themes[themeName] = { brands: {} };
         brandClasses.forEach(brandClassWithDot => {
           const brandName = brandClassWithDot.replace(".", "").replace("u-brand-", "");
-          window.colorThemes.themes[themeName].brands[brandName] = checkClass(themeClassWithDot, brandClassWithDot);
+          window.colorThemes.themes[themeName].brands[brandName] = checkClass(themeClassWithDot.replace(".", ""), brandClassWithDot.replace(".", ""));
         });
-        if (!brandClasses.size) window.colorThemes.themes[themeName] = checkClass(themeClassWithDot);
+        if (!brandClasses.size) window.colorThemes.themes[themeName] = checkClass(themeClassWithDot.replace(".", ""));
       });
 
       saveToStorage(window.colorThemes.themes);
