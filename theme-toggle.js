@@ -1,3 +1,8 @@
+/**
+ * Theme Toggle 1.1.0
+ * Released under the MIT License
+ * Released on: February 3, 2025
+ */
 function colorModeToggle() {
   function attr(defaultVal, attrVal) {
     const defaultValType = typeof defaultVal;
