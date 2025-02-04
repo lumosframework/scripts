@@ -1,5 +1,5 @@
 /**
- * Theme Toggle 1.1.0
+ * Theme Toggle 1.1.1
  * Released under the MIT License
  * Released on: February 3, 2025
  */
@@ -44,7 +44,6 @@ function colorModeToggle() {
   }
 
   function goDark(dark, animate) {
-    console.log(dark);
     if (dark) {
       localStorage.setItem("dark-mode", "true");
       htmlElement.classList.add("dark-mode");
